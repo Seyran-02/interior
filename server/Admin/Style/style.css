@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.bg {
+    background-image: url(../images/interior.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+::-moz-placeholder{
+    color: #fff;
+}
+:-ms-input-placeholder{
+    color: #fff;
+}
+::-ms-input-placeholder{
+    color: #fff;
+}
+::placeholder{
+    color: #fff;
+}
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid #222;
+    padding: 45px 15px 15px;
+    background-color: rgba(0,0,0,0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.form > input {
+    margin: 10px 15px;
+    width: 400px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    color: #fff;
+}
+.form > input:focus, .form > input:blur {
+    color: #fff!important;
+    background: transparent!important;
+}
+.form > input[type="submit"]{
+    border:none;
+    background-color:#D23000; 
+    width: 50%;
+    margin: 15px auto 10px;
+}
+.index_img {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+}
+.index_img > img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+.form > div > span {
+    color: #fff;
+}
+
+.msg {
+    font-size: 12px;
+    height: 20px;
+}
+
+#remamber {
+    text-align: center;
+    margin: 10px;
+}
+
+/*sections.php*/
+.create{
+    padding: 40px 40px 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.create>button{
+    font-size: 25px;
+    outline: none !important;
+}
+.create>input{
+    padding-left: 10px;
+    border:1px solid #780202;
+    border-radius: 20px;
+    width: 300px;
+    outline: none;
+}
+.modal_update{
+    display: none;
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0,0.5);
+}
+.box_update{
+    z-index: 10;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    border-radius:20px;
+    background-color: #fff;
+}
+.box_update>div{
+    padding: 20px 40px;
+}
+.modal_delete{
+    display: none;
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0,0.5);
+}
+.box_delete{
+    z-index: 10;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    border-radius:20px;
+    background-color: #fff;
+    text-align: center;
+}
+.box_delete>div{
+    padding: 20px 40px;
+}
+.close{
+    outline:none !important;
+}
+.sec_name{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px;
+    outline:none !important;
+}
+/*products*/
+.products_add_box{
+    width: 400px;
+    margin: 20px auto;   
+}
+
+.products_add_box>div{
+    display: flex;
+    justify-content: space-between;
+}
+.inp{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+input{
+    outline:none;
+}
