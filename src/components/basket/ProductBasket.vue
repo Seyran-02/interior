@@ -1,0 +1,88 @@
+<template>
+    <div>
+        <div class="px-24 mt-20">
+            <div v-if="getBasket.length" class="basket">
+                <div v-for="item in getBasket" :key="item.id" class="item mt-12">
+                    <img :src="'http://localhost/interior/images/'+item.img" alt="">
+                    <div class="sumbox pb-8">
+                            <p>{{ item.name }}</p>
+                            <span class="sum">{{ item.sum }}</span>
+                            <button class="py-2">
+                                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.9225 3.11958H5.02823L3.10209 0H0.405503C0.182476 0 0 0.187175 0 0.415944C0 0.644713 0.182476 0.831888 0.405503 0.831888H2.65604L6.99492 7.90294L7.03547 7.98613C7.23822 8.31888 7.60317 8.52686 7.9884 8.52686H13.6452C14.0912 8.52686 14.4967 8.25649 14.6589 7.81975L15.916 4.65857C16.0579 4.30502 16.0174 3.90987 15.8146 3.59792C15.6321 3.30676 15.2874 3.11958 14.9225 3.11958ZM15.1861 4.34662L13.929 7.50779C13.8885 7.61178 13.7871 7.69497 13.6654 7.69497H8.00868C7.9073 7.69497 7.80592 7.63257 7.7451 7.54939L5.53511 3.95147H14.9225C15.0644 3.95147 15.1252 4.03466 15.1658 4.07625C15.1861 4.11785 15.2469 4.22183 15.1861 4.34662Z" fill="white"/>
+                                    <path d="M14.2737 10.5856C14.2737 9.7953 13.6452 9.17139 12.895 9.17139C12.1245 9.17139 11.5163 9.8161 11.5163 10.5856C11.5163 11.3551 12.1448 11.9998 12.895 11.9998C13.6452 11.9998 14.2737 11.3551 14.2737 10.5856ZM12.307 10.5856C12.307 10.2528 12.5706 10.0033 12.8747 10.0033C13.1991 10.0033 13.4424 10.2736 13.4424 10.5856C13.4424 10.8976 13.1991 11.1679 12.895 11.1679C12.5706 11.1679 12.307 10.8976 12.307 10.5856Z" fill="white"/>
+                                    <path d="M8.43446 9.15088C7.66401 9.15088 7.05576 9.79559 7.05576 10.5651C7.05576 11.3346 7.68428 11.9793 8.43446 11.9793C9.20492 11.9793 9.81317 11.3346 9.81317 10.5651C9.81317 9.79559 9.18464 9.15088 8.43446 9.15088ZM8.43446 11.1682C8.11006 11.1682 7.86676 10.8978 7.86676 10.5859C7.86676 10.2739 8.13034 10.0036 8.43446 10.0036C8.75887 10.0036 9.00217 10.2739 9.00217 10.5859C9.00217 10.8978 8.73859 11.1682 8.43446 11.1682Z" fill="white"/>
+                                </svg>
+                                Add
+                            </button>
+                        </div>
+                </div>
+            </div>
+            <div v-else>
+                <p class="empty pt-12">There aren't products</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+export default {
+    setup(){
+        const store = useStore();
+        const getBasket = computed(()=>{
+            return store.getters.getBasket;
+        });
+        return{getBasket}
+    }
+}
+</script>
+
+<style scoped>
+.item{
+    position: relative;
+    width:47%;
+}
+.item>img{
+    width: 70%;
+}
+.basket{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sumbox{
+    position: absolute;
+    top:50%;
+    right:0;
+    transform: translateY(-50%);
+    /* margin: 0 auto; */
+    text-align: center;
+    background-color: #EEEEEE;
+    width:248px;
+}
+.sumbox>p{
+    font-size:18px;
+}
+.sum{
+    font-size:24px;
+    color: #780202;
+}
+button{
+   position:absolute;
+   bottom: -15px;
+   right:64px;
+   outline: none;
+   width:119px;
+   color:#fff;
+   background-color:  #780202; 
+}
+button>svg{
+    display:inline;
+}
+.empty{
+    color:  #780202;
+    font-size: 30px;
+}
+</style>
